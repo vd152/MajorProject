@@ -1,0 +1,15 @@
+:root {
+    --grey-dark: #040404; /* Used on Aside */
+    --grey-light: #121212; /* Used as Backround Color */
+    --grey-lighter: #181818; /* Used on Playlist Items Background Color.*/
+    --grey-lightest: #252525;
+
+    --grey-text: #b3b3b3; /* Used on Text Color */
+    --grey-nav: #00000080; /* Used as Top Bar Background Color */
+    --red-button: #cc3521;
+    --green-button: #1db954; /* Used as Play Button Background Color */
+  }
+  .btn:active, .btn:focus{
+    box-shadow:none;
+    border: none;
+  }
