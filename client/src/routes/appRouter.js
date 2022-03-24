@@ -17,12 +17,11 @@ const routes = (
     </Router>
     <ToastContainer
       position="top-right"
-      autoClose={3000}
-      hideProgressBar={false}
+      autoClose={2500}
+      hideProgressBar={true}
       newestOnTop={false}
       closeOnClick
       rtl={false}
-      theme="dark"
       pauseOnFocusLoss={false}
       draggable
       pauseOnHover

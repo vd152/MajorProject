@@ -28,3 +28,12 @@
     margin: 5px;
     padding: 5px 15px;
   }
+  a, a:hover{
+    text-decoration: none;
+  }
+  a{
+    color: #2e9b54;
+  }
+  a:hover{
+    color: #196d36;
+  }

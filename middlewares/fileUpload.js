@@ -1,5 +1,5 @@
 const multer = require("multer");
-// const {v1: uuid } = require('uuid');
+const fs = require("fs");
 
 const MIME_TYPE_MAP = {
   "image/png": "png",
@@ -26,11 +26,14 @@ const fileUpload = multer({
   limits: 500000,
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "data/uploads");
+      const path = `data/uploads/${req.params.doodleName}`;
+      fs.mkdirSync(path, { recursive: true });
+      return cb(null, path);
+      //cb(null, `data/uploads/${req.params.doodleName}`);
     },
     filename: (req, file, cb) => {
       //const ext = MIME_TYPE_MAP[file.mimetype];
-      cb(null, req.params.doodleName + "-" + Date.now() +".png");
+      cb(null, req.params.doodleName + "-" + Date.now() + ".png");
     },
   }),
   fileFilter: (req, file, cb) => {
