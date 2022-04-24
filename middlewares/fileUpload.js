@@ -26,7 +26,7 @@ const fileUpload = multer({
   limits: 500000,
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      const path = `data/uploads/${req.params.doodleName}`;
+      const path = `./data/uploads/${req.params.doodleName}`;
       fs.mkdirSync(path, { recursive: true });
       return cb(null, path);
       //cb(null, `data/uploads/${req.params.doodleName}`);

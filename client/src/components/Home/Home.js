@@ -14,7 +14,19 @@ class Home extends Component {
         <div className="col-6">
           <h5>It looks like..</h5>
           <ul className="list-group w-50 pt-3">
-            <li className="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+            <li className="list-group-item d-flex justify-content-between align-items-center border-0 py-2 p-0">
+              Prediction 1
+              <span className="badge badge-success badge-pill"> 80%</span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center border-0 py-2 p-0">
+              Prediction 1
+              <span className="badge badge-success badge-pill"> 80%</span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center border-0 py-2 p-0">
+              Prediction 1
+              <span className="badge badge-success badge-pill"> 80%</span>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center border-0 py-2 p-0">
               Prediction 1
               <span className="badge badge-success badge-pill"> 80%</span>
             </li>
