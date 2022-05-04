@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 export default class Canvas extends React.Component {
   state = {
-    brushRadius: 5,
+    brushRadius: 10,
     doodleNames: [],
     selectedDoodle: "",
   };
@@ -76,13 +76,21 @@ export default class Canvas extends React.Component {
         <CanvasDraw
           ref={(canvasDraw) => (this.saveableCanvas = canvasDraw)}
           brushRadius={this.state.brushRadius}
+          className="canvas"
           style={{
             margin: "auto",
             boxShadow:
               "0 13px 27px -5px rgba(50, 50, 93, 0.25),    0 8px 16px -8px rgba(0, 0, 0, 0.3)",
           }}
           onChange={(e) => {
-            //console.log(e.lines);
+            if(!this.props.save){
+              api.post('/predict', {dataURL: e.getDataURL()}).then(res=>{
+                this.props.updatePredictions(res.data)
+              }).catch(err=>{
+                console.log(err)
+              })
+            }
+           
           }}
         />
         <div className="p-3">
@@ -90,6 +98,7 @@ export default class Canvas extends React.Component {
           <input
             className="radius-input m-2"
             type="number"
+            min="9"
             value={this.state.brushRadius}
             onChange={(e) =>
               this.setState({ brushRadius: parseInt(e.target.value, 10) })

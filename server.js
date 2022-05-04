@@ -3,7 +3,7 @@ const app = express();
 var cors = require('cors')
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+const path = require('path');
 dotenv.config();
 
 const PORT = 5500
@@ -16,6 +16,15 @@ app.use(
 );
 app.use(express.json());
 app.use(cors())
+app.use(
+    "/model/get",
+    express.static(path.join(__dirname, "model/model.json"))
+  );
+  app.use(
+    "/model",
+    express.static(path.join(__dirname, "model"))
+  );
+  
 app.use('/', indexRouter);
 
 

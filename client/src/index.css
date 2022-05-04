@@ -37,3 +37,23 @@
   a:hover{
     color: #196d36;
   }
+  .canvas{
+    width: auto !important;
+  }
+  .prediction-box{
+    text-align: center
+  }
+  .prediction-box .list-group{
+    margin: auto;
+  }
+  @media (min-width: 768px){
+    .canvas{
+      width: 400px !important;
+    }
+    .prediction-box{
+      text-align: left
+    }
+    .prediction-box .list-group{
+      margin-left: 0 !important;
+    }
+  }
