@@ -109,6 +109,7 @@ export default class Canvas extends React.Component {
           className="btn"
           onClick={() => {
             this.saveableCanvas.clear();
+            this.props.updatePredictions([])
           }}
         >
           Clear
