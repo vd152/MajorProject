@@ -1,5 +1,5 @@
-export const url = 'http://localhost:5500'
-//export const url = "https://major-api.vidhiangrish.com/"
+//export const url = 'http://localhost:5500'
+export const url = "https://major-api.vidhiangrish.com/"
 export function dataURItoBlob(dataURI) {
     var byteString = atob(dataURI.split(",")[1]);
     var mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
