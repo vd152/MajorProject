@@ -83,7 +83,8 @@ export default class Canvas extends React.Component {
               "0 13px 27px -5px rgba(50, 50, 93, 0.25),    0 8px 16px -8px rgba(0, 0, 0, 0.3)",
           }}
           onChange={(e) => {
-            if(!this.props.save){
+            if(!this.props.save && e.getDataURL()){
+              this.props.updateImage(e.getDataURL())
               api.post('/predict', {dataURL: e.getDataURL()}).then(res=>{
                 this.props.updatePredictions(res.data)
               }).catch(err=>{

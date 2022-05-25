@@ -6,6 +6,7 @@ import Home from "../components/Home/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DataCreation from "../components/DataCreation";
+import Autocomplete from "../components/Autocomplete"
 
 const routes = (
   <React.Fragment>
@@ -13,6 +14,7 @@ const routes = (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/create" component={DataCreation} />
+        <Route exact path="/autocomplete" component={Autocomplete} />
       </Switch>
     </Router>
     <ToastContainer
